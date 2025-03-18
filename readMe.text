@@ -2,16 +2,20 @@ For publishing the goal. The goal pose should be published only after launching 
 
 
 
-Goal pose for vehicle moving from right side of the traffic signal from camera perspective
-
-ros2 topic pub --once /carla/ego_vehicle/goal geometry_msgs/msg/PoseStamped "{header: {stamp: {sec: $(date +%s), nanosec: $(( $(date +%s%N) % 1000000000 ))}, frame_id: 'my_frame'}, pose: {position: {x: -16.183, y: 57.55405, z: -0.00123}, orientation: {x: 0.0000008, y: 0.0003078, z: -0.0044474, w: 0.9999900}}}"
-
-spawn_point": {"x": 10.0, "y": -13.236, "z": 0.6, "roll": 0.0, "pitch": 0.0, "yaw": 180.0}
-
-
-
-Goal pose for the vehicle moving towards the camera
-
+**Scenario 1** - Goal pose for the vehicle moving towards the camera
 ros2 topic pub --once /carla/ego_vehicle/goal geometry_msgs/msg/PoseStamped "{header: {stamp: {sec: $(date +%s), nanosec: $(( $(date +%s%N) % 1000000000 ))}, frame_id: 'my_frame'}, pose: {position: {x: -78.15, y: -13.22, z: -0.00123}, orientation: {x: -0.0001166, y: -0.000002, z: 0.9999813, w: 0.0061091}}}"
 
-"spawn_point": {"x": -99.99, "y": 36.82, "z": 0.6, "roll": 0.0, "pitch": 0.0, "yaw": 70.0}
+Just for reference
+Starting point: "spawn_point": {"x": -99.99, "y": 36.82, "z": 0.6, "roll": 0.0, "pitch": 0.0, "yaw": 70.0}
+
+
+
+**Scenario 2** - Goal pose for vehicle moving from right side of the traffic signal from camera perspective
+ros2 topic pub --once /carla/ego_vehicle/goal geometry_msgs/msg/PoseStamped "{header: {stamp: {sec: $(date +%s), nanosec: $(( $(date +%s%N) % 1000000000 ))}, frame_id: 'my_frame'}, pose: {position: {x: -16.183, y: 57.55405, z: -0.00123}, orientation: {x: 0.0000008, y: 0.0003078, z: -0.0044474, w: 0.9999900}}}"
+
+Just for reference
+Starting point: spawn_point": {"x": 10.0, "y": -13.236, "z": 0.6, "roll": 0.0, "pitch": 0.0, "yaw": 180.0}
+
+
+
+
